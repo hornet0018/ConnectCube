@@ -1,0 +1,151 @@
+
+(rules PCB CPU_ESP32WROOM32
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule In1.Cu
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule In2.Cu
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule In3.Cu
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule In4.Cu
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.0)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd-smd))
+  )
+  (padstack "Via[0-5]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In3.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In4.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-5]_800:400_um" "Via[0-5]_800:400_um" default
+  )
+  (via 
+    "Via[0-5]_800:400_um-kicad_default" "Via[0-5]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-5]_800:400_um-3.3V" "Via[0-5]_800:400_um" 3.3V
+  )
+  (via 
+    "Via[0-5]_800:400_um-5V" "Via[0-5]_800:400_um" 5V
+  )
+  (via_rule
+    default "Via[0-5]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-5]_800:400_um-kicad_default"
+  )
+  (via_rule
+    3.3V "Via[0-5]_800:400_um-3.3V"
+  )
+  (via_rule
+    5V "Via[0-5]_800:400_um-5V"
+  )
+  (class default
+    GND "unconnected-(IC1-Pad4)" "unconnected-(IC1-Pad5)" /IO12 "unconnected-(IC1-Pad17)" "unconnected-(IC1-Pad18)" "unconnected-(IC1-Pad19)" "unconnected-(IC1-Pad20)"
+    "unconnected-(IC1-Pad21)" "unconnected-(IC1-Pad22)" "unconnected-(IC1-Pad32)" "unconnected-(J1-Pad13)" "unconnected-(J1-Pad14)" "unconnected-(J1-Pad15)" "unconnected-(J1-Pad16)" /EN
+    /IO34 /IO35 /IO32 /IO33 /IO25 /IO26 /IO27 /IO14
+    /IO13 /IO15 /IO2 /IO0 /IO4 /IO16 /IO17 /IO5
+    /IO18 /IO19 /IO21 /RXD0 /TXD0 /IO22 /IO23 "Net-(D1-Pad1)"
+    "Net-(D2-Pad1)" "Net-(C4-Pad1)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 3.3V
+    +3V3
+    (clearance_class 3.3V)
+    (via_rule 3.3V)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 5V
+    +5V
+    (clearance_class 5V)
+    (via_rule 5V)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
