@@ -1,0 +1,5 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"H1, H2, H3, H4",MountingHole_3.2mm_M3_Pad_Via,4,MountingHole,
+"H5, H6, H7, H8",MountingHole_3.2mm_M3,4,MountingHole,
+"J1, J3",PinHeader_2x10_P2.54mm_Vertical,2,Conn_02x10_Odd_Even,
+"J2, J4",PinHeader_1x08_P2.00mm_Vertical,2,Conn_01x08_Male,

@@ -78,10 +78,10 @@ public:
       cfg.use_lock = true;               // トランザクションロックを使用する場合はtrueを設定
       cfg.dma_channel = SPI_DMA_CH_AUTO; // 使用するDMAチャンネルを設定 (0=DMA不使用 / 1=1ch / 2=ch / SPI_DMA_CH_AUTO=自動設定)
       // ※ ESP-IDFバージョンアップに伴い、DMAチャンネルはSPI_DMA_CH_AUTO(自動設定)が推奨になりました。1ch,2chの指定は非推奨になります。
-      cfg.pin_sclk = 26; // SPIのSCLKピン番号を設定
-      cfg.pin_mosi = 25; // SPIのMOSIピン番号を設定
+      cfg.pin_sclk = 18; // SPIのSCLKピン番号を設定
+      cfg.pin_mosi = 22; // SPIのMOSIピン番号を設定
       cfg.pin_miso = -1; // SPIのMISOピン番号を設定 (-1 = disable)
-      cfg.pin_dc = 2;    // SPIのD/Cピン番号を設定  (-1 = disable)
+      cfg.pin_dc = 27;   // SPIのD/Cピン番号を設定  (-1 = disable)
                          // SDカードと共通のSPIバスを使う場合、MISOは省略せず必ず設定してください。
                          //*/
                          /*
@@ -117,8 +117,8 @@ public:
     {                                      // 表示パネル制御の設定を行います。
       auto cfg = _panel_instance.config(); // 表示パネル設定用の構造体を取得します。
 
-      cfg.pin_cs = -1;   // CSが接続されているピン番号   (-1 = disable)
-      cfg.pin_rst = 17;  // RSTが接続されているピン番号  (-1 = disable)
+      cfg.pin_cs = 14;   // CSが接続されているピン番号   (-1 = disable)
+      cfg.pin_rst = 33;  // RSTが接続されているピン番号  (-1 = disable)
       cfg.pin_busy = -1; // BUSYが接続されているピン番号 (-1 = disable)
 
       // ※ 以下の設定値はパネル毎に一般的な初期値が設定されていますので、不明な項目はコメントアウトして試してみてください。
